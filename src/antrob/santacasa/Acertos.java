@@ -34,4 +34,27 @@ public class Acertos {
 		this.numeros = numeros;
 		this.estrelas = estrelas;
 	}
+	
+	// Overriding equals() para comparar dois objectos Acertos  
+	@Override 
+	public boolean equals(Object o) { 
+		
+		 // If the object is compared with itself then return true   
+        if (o == this) { 
+            return true; 
+        } 
+  
+        // Check if o is an instance of Acertos or not   
+        if (!(o instanceof Acertos)) { 
+            return false; 
+        } 
+          
+        // typecast o to Acertos so that we can compare data members  
+        Acertos a = (Acertos) o; 
+          
+        // Compare the data members and return accordingly  
+		
+		return (numeros == a.numeros) && (estrelas == a.estrelas );
+	}
+	
 }
